@@ -8,6 +8,7 @@ import Button from 'components/Button'
 import * as selectors from 'selectors'
 import {APP_UNDO, POINTS_ADD, APP_SEED} from 'actions'
 
+import getRandomizedPoints from 'lib/getRandomizedPoints'
 import normalize from 'lib/normalize'
 
 export default (push) => {
