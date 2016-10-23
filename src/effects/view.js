@@ -6,7 +6,7 @@ import {voronoi} from 'd3-voronoi'
 import Button from 'components/Button'
 
 import * as selectors from 'selectors'
-import {APP_UNDO, POINTS_ADD, POINTS_CLEANUP} from 'actions'
+import {APP_UNDO, POINTS_ADD, APP_SEED} from 'actions'
 
 import normalize from 'lib/normalize'
 
@@ -47,7 +47,9 @@ export default (push) => {
           </Button>
 
           <Button
-            onClick={() => push({ type: POINTS_CLEANUP })}
+            onClick={() => push({
+              type: APP_SEED, payload: getRandomizedPoints()
+            })}
             title='reseed'>
             ✕
           </Button>

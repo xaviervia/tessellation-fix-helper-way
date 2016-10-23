@@ -1,4 +1,4 @@
-import {map, range} from 'ramda'
+import getRandomizedPoints from 'lib/getRandomizedPoints'
 import {APP_SEED} from 'actions'
 
 const {floor, random} = Math
@@ -8,8 +8,5 @@ const {floor, random} = Math
 export default (push) => (state) => state.shared.points.length === 0 &&
   push({
     type: APP_SEED,
-    payload: map(
-      () => [floor(random() * 100), floor(random() * 100)],
-      range(0, 9)
-    )
+    payload: getRandomizedPoints()
   })
